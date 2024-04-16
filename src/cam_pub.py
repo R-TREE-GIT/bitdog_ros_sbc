@@ -17,8 +17,9 @@ bridge = CvBridge()
 
 counter = 0
 while not rospy.is_shutdown():
-	if counter % 2 != 0:
+	if counter % 3 != 0:
 		counter += 1
+		continue
 	else:
 		counter = 1
 	ret, image = cap.read()
