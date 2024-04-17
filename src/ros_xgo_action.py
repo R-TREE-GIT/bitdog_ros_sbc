@@ -8,10 +8,6 @@ import rospy
 from std_msgs.msg import Float64, String, Int8
 import sys,os
 import subprocess
-#sudo chmod a+rw /dev/ttyS0
-
-subprocess.call([("sudo chmod a+rw /dev/ttyAMA0")],shell = True)
-
 
 class xgo:
 	def __init__(self):
