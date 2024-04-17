@@ -1,4 +1,6 @@
 <launch>
     <node pkg="husky2xgo" type="cam_pub.py" name="cam_pub_node" output="screen">
     </node>
+    <node pkg="husky2xgo" type="ros_xgo_action.py" name="xgo" output="screen">
+    </node>
 </launch>
