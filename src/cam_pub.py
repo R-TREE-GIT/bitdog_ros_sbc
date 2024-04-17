@@ -4,6 +4,7 @@ import sys, os
 import numpy as np
 import cv2
 import rospy
+import time
 from sensor_msgs.msg import CompressedImage
 from std_msgs.msg import Float64, String
 from cv_bridge import CvBridge
@@ -17,11 +18,12 @@ bridge = CvBridge()
 
 counter = 0
 while not rospy.is_shutdown():
-	if counter % 3 != 0:
+	if counter < 3:
 		counter += 1
+		time.sleep(0.01)
 		continue
 	else:
-		counter = 1
+		counter = 0
 	ret, image = cap.read()
 	print(type(image))
 	msg = CompressedImage()
